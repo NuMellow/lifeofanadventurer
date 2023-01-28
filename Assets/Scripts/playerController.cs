@@ -5,10 +5,6 @@ using UnityEngine;
 public class playerController : MonoBehaviour
 {
 
-    // Player Config
-    public float jumpVelocity = 8f;
-    public float fallMultiplier = 2.5f;
-
     // Movement variables
     public float maxSpeed;
     Rigidbody2D rigidBody;
