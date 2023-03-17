@@ -43,6 +43,12 @@ public class playerController : MonoBehaviour
             animator.SetBool("isGrounded", grounded);
             rigidBody.AddForce(new Vector2(0, jumpHeight));
         }
+        // maybe TODO: Wall jump
+        // else if(climbing && Input.GetButtonDown("Jump"))
+        // {
+        //     flip();
+        //     rigidBody.AddForce(new Vector2(jumpHeight * 20, jumpHeight * 4));
+        // }
     }
 
     void FixedUpdate()
@@ -75,13 +81,23 @@ public class playerController : MonoBehaviour
 
         float vMove = Input.GetAxis("Vertical");
         climbing = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, groundLayer); //TODO: change groundLayer to wallLayer when you add it
+        animator.SetBool("isClimbing", climbing);
         if(climbing)
         {
             // float vMove = Input.GetAxis("Vertical");
-            //TODO: animator to do climbing animation
-            climbStrengthAmount = Mathf.Max(0, climbStrengthAmount - (Mathf.Abs(vMove) + .5f));
+            if (vMove > 0)
+            {
+                animator.SetBool("isClimbing", climbing);
+                climbStrengthAmount = Mathf.Max(0, climbStrengthAmount - (Mathf.Abs(vMove) + .5f));
+            }
+                
+            // else
+            //     animator.SetBool("isClimbing", false);
+            
             if (climbStrengthAmount > 0)
-                rigidBody.velocity = new Vector2(rigidBody.velocity.x, vMove*maxSpeed );
+                rigidBody.velocity = new Vector2(rigidBody.velocity.x, vMove*(maxSpeed/1.5f) );
+            else
+                animator.SetBool("isClimbing", false);
         }
     }
 
