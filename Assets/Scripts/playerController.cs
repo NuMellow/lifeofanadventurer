@@ -13,6 +13,7 @@ public class playerController : MonoBehaviour
 
     //jumping variables
     bool grounded = false;
+    bool jumpCooledDown = true;
     float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
     public Transform groundCheck;
@@ -37,11 +38,21 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(grounded && Input.GetAxis("Jump") > 0)
+        if(grounded && jumpCooledDown && Input.GetAxis("Jump") > 0 )
         {
             grounded = false;
             animator.SetBool("isGrounded", grounded);
             rigidBody.AddForce(new Vector2(0, jumpHeight));
+        }
+
+        if(!grounded && rigidBody.velocity.y < 0)
+        {
+            jumpCooledDown = false;
+        }
+
+        if(grounded && Input.GetAxis("Jump") <= 0)
+        {
+            jumpCooledDown = true;
         }
         // maybe TODO: Wall jump
         // else if(climbing && Input.GetButtonDown("Jump"))
