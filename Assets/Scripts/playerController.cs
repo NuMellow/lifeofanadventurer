@@ -23,7 +23,8 @@ public class playerController : MonoBehaviour
     bool climbing = false;
     float wallCheckRadius = 0.2f;
     public float climbStrength;
-    public Transform wallCheck;
+    public Transform wallCheckUpper;
+    public Transform wallCheckLower;
     float climbStrengthAmount;
     //TODO: should add a wall layer. For now will use ground layer
 
@@ -91,19 +92,23 @@ public class playerController : MonoBehaviour
         }
 
         float vMove = Input.GetAxis("Vertical");
-        climbing = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, groundLayer); //TODO: change groundLayer to wallLayer when you add it
+        bool headTouchingWall = Physics2D.OverlapCircle(wallCheckUpper.position, wallCheckRadius, groundLayer); //TODO: change groundLayer to wallLayer when you add it
+        bool bodyTouchingWall = Physics2D.OverlapCircle(wallCheckLower.position, wallCheckRadius, groundLayer);
+        climbing = headTouchingWall || bodyTouchingWall; 
         animator.SetBool("isClimbing", climbing);
         if(climbing)
         {
-            // float vMove = Input.GetAxis("Vertical");
             if (vMove > 0)
             {
                 animator.SetBool("isClimbing", climbing);
                 climbStrengthAmount = Mathf.Max(0, climbStrengthAmount - (Mathf.Abs(vMove) + .5f));
             }
-                
-            // else
-            //     animator.SetBool("isClimbing", false);
+
+            //give a little boost to climb onto the ground    
+            if (!headTouchingWall)
+            {
+                rigidBody.AddForce(new Vector2(0, jumpHeight));
+            }
             
             if (climbStrengthAmount > 0)
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, vMove*(maxSpeed/1.5f) );
