@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a0d11c06f76d43844a7a65310ccf5fc9
+guid: 455b69367f533e84395ac62b0a6dda67
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,70 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SlideDownSpriteSheet 1_0
+      name: TwigRun_0000s_0004_Run1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f56e5180cb7e34292936ea00a27c65
+      internalID: -115301849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TwigRun_0000s_0004_Run1_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad85a4f6b8dfa35478805d80e09ba0a9
+      internalID: 416490964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TwigRun_0000s_0004_Run1_2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b266ed161d488994d8b8689840e83630
+      internalID: -1430608277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TwigRun_0000s_0004_Run1_3
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ac0a756cc82c2448bcc96a0d5fba4f3
-      internalID: 1759211020
+      spriteID: a668a7ccca3f00146aaad602bfdf42c6
+      internalID: -1681978005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlideDownSpriteSheet 1_1
+      name: TwigRun_0000s_0004_Run1_4
       rect:
         serializedVersion: 2
         x: 1024
@@ -152,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65198fe5c86931148b8096db0e70b13a
-      internalID: -1392062710
+      spriteID: 57859b7466136d544bc52f01f60ff7bf
+      internalID: 1274779516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlideDownSpriteSheet 1_2
+      name: TwigRun_0000s_0004_Run1_5
       rect:
         serializedVersion: 2
         x: 2048
@@ -173,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9b6dbe20d3ef2f46a8ddad0fcd64914
-      internalID: -2139354792
+      spriteID: 39f5727d644d6734f9acbb2c1a1ba2ff
+      internalID: -1047896613
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlideDownSpriteSheet 1_3
+      name: TwigRun_0000s_0004_Run1_6
       rect:
         serializedVersion: 2
         x: 0
@@ -194,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c69b4bc0f011e34b92280ff7adecdf9
-      internalID: -927152002
+      spriteID: d8530c7656450e742acd7ad8eaab4f63
+      internalID: 1412102728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlideDownSpriteSheet 1_4
+      name: TwigRun_0000s_0004_Run1_7
       rect:
         serializedVersion: 2
         x: 1024
@@ -215,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b8adde2c3b7189458fb1443895d09d5
-      internalID: -1219778943
+      spriteID: 2aed75d0f55ba304f9cdc1d81349c1e9
+      internalID: -1145956329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlideDownSpriteSheet 1_5
+      name: TwigRun_0000s_0004_Run1_8
       rect:
         serializedVersion: 2
         x: 2048
@@ -236,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0493c6747ea41bd408b60f880d5c32b0
-      internalID: -1292039057
+      spriteID: b96023fc65b2dca41b5ba77f3e9efdc5
+      internalID: 508162455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlideDownSpriteSheet 1_6
+      name: TwigRun_0000s_0004_Run1_9
       rect:
         serializedVersion: 2
         x: 0
@@ -257,29 +320,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d573412a2092ca743aab78e893c763d7
-      internalID: 1726092309
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SlideDownSpriteSheet 1_7
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 1024
-        height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 786df55a5e98c1043a621d16e7723fb3
-      internalID: -1230719297
+      spriteID: 27b965bfbe0a2dc4d82b74edec223123
+      internalID: 1042869998
       vertices: []
       indices: 
       edges: []
@@ -295,14 +337,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SlideDownSpriteSheet 1_2: -2139354792
-      SlideDownSpriteSheet 1_7: -1230719297
-      SlideDownSpriteSheet 1_1: -1392062710
-      SlideDownSpriteSheet 1_4: -1219778943
-      SlideDownSpriteSheet 1_0: 1759211020
-      SlideDownSpriteSheet 1_5: -1292039057
-      SlideDownSpriteSheet 1_6: 1726092309
-      SlideDownSpriteSheet 1_3: -927152002
+      TwigRun_0000s_0004_Run1_5: -1047896613
+      TwigRun_0000s_0004_Run1_0: -115301849
+      TwigRun_0000s_0004_Run1_4: 1274779516
+      TwigRun_0000s_0004_Run1_7: -1145956329
+      TwigRun_0000s_0004_Run1_8: 508162455
+      TwigRun_0000s_0004_Run1_1: 416490964
+      TwigRun_0000s_0004_Run1_2: -1430608277
+      TwigRun_0000s_0004_Run1_3: -1681978005
+      TwigRun_0000s_0004_Run1_9: 1042869998
+      TwigRun_0000s_0004_Run1_6: 1412102728
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
