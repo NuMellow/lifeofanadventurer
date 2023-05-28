@@ -85,7 +85,7 @@ public class playerController : MonoBehaviour
             flip();
         }
 
-        Debug.Log("ClimbStrengthAmount: " + climbStrengthAmount);
+        // Debug.Log("ClimbStrengthAmount: " + climbStrengthAmount);
         if(grounded && climbStrengthAmount <= climbStrength)
         {
             climbStrengthAmount += 1;
