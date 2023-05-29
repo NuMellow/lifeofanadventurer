@@ -20,6 +20,7 @@ public class SupportCharacterController : MonoBehaviour
 
     public GameObject sprite;
     bool facingRight = true;
+    bool follow = true;
 
     Animator animator;
 
@@ -34,17 +35,19 @@ public class SupportCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // characterPosition = gameObject.transform.position;
-        // targetPosition = targetGameObject.transform.position;
+        if(Input.GetButtonUp("Follow"))
+            follow = !follow;
+
+        move(follow);
+    }
+
+    void move(bool follow)
+    {
         distance = Vector2.Distance(gameObject.transform.position, targetGameObject.transform.position);
         float distance_x = Mathf.Abs(targetGameObject.transform.position.x - gameObject.transform.position.x);
         Debug.Log("Distance x: " + distance_x);
-        float playerSpeed = targetBody.velocity.x;
-        
 
-        // animator.SetFloat("speed", Mathf.Abs(playerSpeed));
-
-        if(distance_x > followDistance)
+        if(distance_x > followDistance && follow)
         {
             animator.SetFloat("speed", 2f);
             int direction = 1;
@@ -52,8 +55,6 @@ public class SupportCharacterController : MonoBehaviour
             {
                 direction = -1;
             }
-            float speed = Mathf.Max(Mathf.Abs(playerSpeed), moveSpeed);
-            // rigidBody.velocity = new Vector2(direction*speed, rigidBody.velocity.y);
             rigidBody.velocity = new Vector2(direction * moveSpeed, rigidBody.velocity.y);
         } else {
             animator.SetFloat("speed", 0);
