@@ -16,6 +16,7 @@ public class playerController : MonoBehaviour
     bool jumpCooledDown = true;
     float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
+    public LayerMask wallLayer;
     public Transform groundCheck;
     public float jumpHeight;
 
@@ -92,8 +93,8 @@ public class playerController : MonoBehaviour
         }
 
         float vMove = Input.GetAxis("Vertical");
-        bool headTouchingWall = Physics2D.OverlapCircle(wallCheckUpper.position, wallCheckRadius, groundLayer); //TODO: change groundLayer to wallLayer when you add it
-        bool bodyTouchingWall = Physics2D.OverlapCircle(wallCheckLower.position, wallCheckRadius, groundLayer);
+        bool headTouchingWall = Physics2D.OverlapCircle(wallCheckUpper.position, wallCheckRadius, wallLayer); //TODO: change groundLayer to wallLayer when you add it
+        bool bodyTouchingWall = Physics2D.OverlapCircle(wallCheckLower.position, wallCheckRadius, wallLayer);
         climbing = headTouchingWall || bodyTouchingWall; 
         animator.SetBool("isClimbing", climbing);
         if(climbing)
@@ -105,7 +106,7 @@ public class playerController : MonoBehaviour
             }
 
             //give a little boost to climb onto the ground    
-            if (!headTouchingWall)
+            if (!headTouchingWall && vMove > 0)
             {
                 rigidBody.AddForce(new Vector2(0, jumpHeight));
             }
@@ -117,6 +118,11 @@ public class playerController : MonoBehaviour
         }
     }
 
+    bool isGrounded()
+    {
+        return grounded;
+    }
+    
     void flip()
     {
         facingRight = !facingRight;
