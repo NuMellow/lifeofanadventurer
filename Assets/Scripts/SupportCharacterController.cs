@@ -15,12 +15,20 @@ public class SupportCharacterController : MonoBehaviour
     //object to follow
     public GameObject targetGameObject;
 
-    // bool isJumping = false;
     float distance;
 
     public GameObject sprite;
     bool facingRight = true;
     bool follow = true;
+    bool grounded = true;
+    float groundCheckRadius = 0.2f;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+
+    bool nearWall;
+    public Transform wallCheck;
+    public LayerMask wallLayer;
+
 
     Animator animator;
 
@@ -35,17 +43,43 @@ public class SupportCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        shouldFollow();
+        move(follow);
+        jump();
+        climb(follow);
+    }
+
+    void FixedUpdate()
+    {
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        Debug.Log("grounded: " + grounded);
+    }
+
+    void shouldFollow()
+    {
         if(Input.GetButtonUp("Follow"))
             follow = !follow;
+    }
+    void jump()
+    {
+        // TODO: new jump logic goes here
 
-        move(follow);
+    }
+
+    void climb(bool follow)
+    {
+        if(follow)
+        {
+            float distance_y = (targetGameObject.transform.position.y - gameObject.transform.position.y);
+            //TODO: add climbing logic
+            
+        }
     }
 
     void move(bool follow)
     {
         distance = Vector2.Distance(gameObject.transform.position, targetGameObject.transform.position);
         float distance_x = Mathf.Abs(targetGameObject.transform.position.x - gameObject.transform.position.x);
-        Debug.Log("Distance x: " + distance_x);
 
         if(distance_x > followDistance && follow)
         {
